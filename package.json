@@ -1,14 +1,11 @@
 {
-    "version": "2.0.0-0",
+    "version": "4.0.0",
     "license": "ISC",
     "//vue-tsc --noEmit && 在build里面加入检查 ": {},
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "serve": "vite preview",
-        "test": "echo \"Running tests for version $npm_package_version...\"",
-        "preversion": "yarn test",
-        "postversion": "git push --tags && yarn publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\""
+        "serve": "vite preview"
     },
     "dependencies": {
         "@sentry/tracing": "^6.11.0",

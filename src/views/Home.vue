@@ -4,8 +4,8 @@
     <a-button type="primary" @click="addAge">age++</a-button>
     <div>{{ $TRACK }}</div>
     <a-button type="primary" @click="clickThrowError">点击抛出错误</a-button>
-</template> 
-<script setup>
+</template>
+<script lang="ts" setup>
 import {  getCurrentInstance, computed } from 'vue';
 import { useStore } from 'vuex';
 import { key } from '@/store';
