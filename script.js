@@ -45,7 +45,7 @@ function prePublish() {
         }
         var msg = stdout.trim();
         var newMsg = '\n\n' + msg;
-        var cmd = 'git commit --amend -m "' + newMsg + '"';
+        var cmd = 'git add . && git commit --amend -m "' + newMsg + '"';
         exec(cmd, function (err, stdout, stderr) {
             if (err) {
                 console.log(err);
