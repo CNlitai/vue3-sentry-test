@@ -3,7 +3,7 @@
     <span>vuex user/age: {{ age }}</span>
     <a-button type="primary" @click="addAge">age++</a-button>
     <div>{{ $TRACK }}</div>
-    <a-button type="primary" @click="clickThrowError">点击抛出错误</a-button>
+    <a-button type="primary" @click="clickThrowError">击抛出错误</a-button>
 </template>
 <script lang="ts" setup>
 import {  getCurrentInstance, computed } from 'vue';
