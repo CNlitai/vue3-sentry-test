@@ -18,7 +18,7 @@ console.log("$TRACK", proxy.$TRACK);
 console.log("VITE_BASE_URL", import.meta.env.VITE_BASE_URL);
 
 const clickThrowError = ()=>{
-    throw new Error('抛出错误a');
+    throw new Error('抛出错误a2');
 }
 </script>
 <style lang='less' scoped>
