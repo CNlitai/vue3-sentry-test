@@ -56,7 +56,6 @@ function getLastCommitVersion() {
             return;
         }
         console.log('版本号不存在，可以提交');
-        prePublish();
     });
   });
 }
@@ -78,8 +77,8 @@ function prePublish() {
                 return;
             }
             console.log(stdout);
+            getLastCommitVersion();
         });
     });
 }
-// index();
-getLastCommitVersion();
+index();
