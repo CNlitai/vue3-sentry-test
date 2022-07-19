@@ -1,5 +1,5 @@
 {
-    "version": "1.0.3",
+    "version": "2.0.0-0",
     "license": "ISC",
     "//vue-tsc --noEmit && 在build里面加入检查 ": {},
     "scripts": {
