@@ -5,6 +5,7 @@ import user, {State as UserState} from './user';
 // 将各模块的State类型汇总
 export interface State {
     user: UserState;
+    router: any;
 }
 
 export const key: InjectionKey<Store<State>> = Symbol();
@@ -19,5 +20,11 @@ export const store = createStore<State>({
 declare module '@vue/runtime-core' {
     interface ComponentCustomProperties {
         $store: Store<State>;
+    }
+}
+
+export const testMutations = {
+    updateRouterList(state: State, payload: any) {
+        state.router = payload
     }
 }
