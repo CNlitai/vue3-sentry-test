@@ -45,7 +45,7 @@ function getLastCommitVersion() {
     }
     var msg = stdout.trim();
     var version = msg.split(' ')[1];
-    var tagCmd = 'git tag -l "' + 'v' + version + '"';
+    var tagCmd = 'git tag "' + 'v' + version + '"';
     exec(tagCmd, function (err, stdout, stderr) {
         if (err) {
             console.log(err);
