@@ -7,19 +7,29 @@ import { exec } from "child_process";
 function index() {
   inquirer.prompt([
     {
-      type: 'list',
-      name: 'version',
-      message: '🚀🚀 请选择更新类型',
-      choices: [
-        { name: '补丁(patch)', value: 'patch' },
-        { name: '次要(minor)', value: 'minor' },
-        { name: '主要(major)', value: 'major' },
-      ],
-    }
+      type: "confirm",
+      name: "confirm",
+      message: "😈 请确保当前位于rebase分支，且已按流程正确完成rebase操作",
+    },
   ]).then(answers => {
-    console.log(JSON.stringify(answers));
-    updatePackageJson(JSON.stringify(answers.version));
+    if (JSON.stringify(answers.confirm) === 'true') {
+      inquirer.prompt([
+        {
+          type: 'list',
+          name: 'version',
+          message: '🚀🚀 请选择更新类型',
+          choices: [
+            { name: '补丁(patch)', value: 'patch' },
+            { name: '次要(minor)', value: 'minor' },
+            { name: '主要(major)', value: 'major' },
+          ],
+        }
+      ]).then(answers => {
+        updatePackageJson(JSON.stringify(answers.version));
+      });
+    }
   });
+
 }
 
 // 更新package.json文件的版本号
