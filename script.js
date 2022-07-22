@@ -54,19 +54,20 @@ function getLastCommitVersion() {
         return;
     }
     var msg = stdout.trim();
-    var version = msg.split(' ')[1];
+    var version = msg.split('\n')[0].split(' ')[1];
+    console.log('🚀🚀 当前版本号为: ' + version);
     var tagCmd = 'git tag "' + 'v' + version + '"';
-    exec(tagCmd, function (err, stdout, stderr) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        if (stdout) {
-            console.log('版本号已存在，不能重复提交');
-            return;
-        }
-        console.log('版本号不存在，可以提交');
-    });
+    // exec(tagCmd, function (err, stdout, stderr) {
+    //     if (err) {
+    //         console.log(err);
+    //         return;
+    //     }
+    //     if (stdout) {
+    //         console.log('版本号已存在，不能重复提交');
+    //         return;
+    //     }
+    //     console.log('版本号不存在，可以提交');
+    // });
   });
 }
 
@@ -91,4 +92,5 @@ function prePublish() {
         });
     });
 }
-index();
+// index();
+getLastCommitVersion();
