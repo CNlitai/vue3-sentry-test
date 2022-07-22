@@ -63,7 +63,7 @@ function getLastCommitVersion() {
     //         return;
     //     }
     //     if (stdout) {
-    //         console.log('版本号已存在，a不能重复提交');
+    //         console.log('版本号已存在，不能重复提交');
     //         return;
     //     }
     //     console.log('版本号不存在，可以提交');
