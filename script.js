@@ -58,7 +58,8 @@ function getLastCommitVersion() {
     var version = msg.split('\n')[0].split(' ')[1];
     if (reg.test(version)) {
       console.log('🚀🚀 当前版本号为: ' + version);
-      updatePackageJson(version);
+    } else {
+      console.error('🚀🚀 当前版本号不符合规范，请检查');
     }
     var tagCmd = 'git tag "' + 'v' + version + '"';
     // exec(tagCmd, function (err, stdout, stderr) {
